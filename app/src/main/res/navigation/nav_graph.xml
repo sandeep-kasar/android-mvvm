@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/mainFragment">
+    <fragment
+        android:id="@+id/mainFragment"
+        android:name="com.mvvm.ui.main.view.MainFragment"
+        android:label="fragment_main"
+        tools:layout="@layout/fragment_main" >
+        <argument android:name="intent"
+            android:defaultValue="None"></argument>
+        <action
+            android:id="@+id/action_mainFragment_to_twoFragment2"
+            app:destination="@id/twoFragment2"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popUpTo="@id/mainFragment"
+            app:popUpToInclusive="true"
+            />
+        <action
+            android:id="@+id/action_mainFragment_to_threeFragment3"
+            app:destination="@id/threeFragment3"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"/>
+    </fragment>
+    <fragment
+        android:id="@+id/twoFragment2"
+        android:name="com.mvvm.ui.main.view.TwoFragment"
+        android:label="fragment_two"
+        tools:layout="@layout/fragment_two" >
+        <argument android:name="send"
+            android:defaultValue="None"></argument>
+        <argument android:name="user"
+            app:argType="com.myapp.data.model.User"></argument>
+
+        <action
+            android:id="@+id/action_twoFragment2_to_fourFragment2"
+            app:destination="@id/fourFragment2" />
+    </fragment>
+    <fragment
+        android:id="@+id/threeFragment3"
+        android:name="com.mvvm.ui.main.view.ThreeFragment"
+        android:label="fragment_three"
+        tools:layout="@layout/fragment_three" />
+    <fragment
+        android:id="@+id/fourFragment2"
+        android:name="com.mvvm.ui.main.view.FourFragment"
+        android:label="fragment_four"
+        tools:layout="@layout/fragment_four" />
+</navigation>
